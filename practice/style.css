@@ -1,0 +1,34 @@
+body {
+  background-color: #339999;
+}
+a {
+	text-decoration: none;
+}
+div#content {
+  background-color: #cccccc;
+  width: 70%;
+  height: 110%;
+  margin-left: 15%;
+  padding-top: 1px;
+}
+div#menu {
+  padding-top: 2pt;
+  background-color: #FFFFFF;
+  height: 40px;
+  width: 90%;
+  margin-left: 5%;
+}
+table#menu {
+  width: 50%;
+  font-size: 18px;
+  margin-left: 20%;
+  font-family: Segoe UI;
+  position: fixed;
+}
+div#content2 {
+  background-color: #ccff33;
+  width: 10%;
+  height: 20px;
+  margin-left: 40%;
+  padding-top: 1px;
+}

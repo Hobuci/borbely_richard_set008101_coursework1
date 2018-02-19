@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+<div id="innerContent">
+	<h1>Subtitution Key Cipher</h1>
+	<br>
+	<p> Takes an input text and a key, shifts each character of the message by the location of the key's characters in the alphabet.
+		ex. Message ABC decoded with the key 'B' would shift each letter by 1, because 'B' is the second character of the alphabet (alphabet[1]); BCD
+		<br />A key can be any length, but if it's shorter than the message, the key is going to be repeated to match the message length.
+		<br />Can only process letters of the alphabet separated by spaces.
+	</p>
+	
+	<div id="key_area">
+		<textarea rows="1" cols="40" autofocus id="key_keycipher" onclick="clearKeyArea()">Enter Key</textarea>
+	</div>
+	<div id="input_area">
+		<textarea rows="6" cols="70" autofocus id="deciphered_keycipher"></textarea>
+	</div>
+	<div id="button_area">
+		<button type="button" onclick="keycipher_encode()" id="keycipher_encode">Encode</button>
+		<button type="button" onclick="keycipher_decode()" id="keycipher_decode">Decode</button>
+	</div>
+	<div id="output_area">
+		<textarea rows="6" cols="70" autofocus id="ciphered_keycipher"></textarea>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Classical Ciphers</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+<script>
+/* Navigation bar functionality */
+  $(document).ready(function()
+	{	//when the index page is ready, load in home content
+		animation_fade();
+		$('#content').load('homeContent.html');
+		//home button
+		$('#nav_home').click(function(){
+			animation_fade();
+			$('#content').load('homeContent.html');});
+		//rot13 button
+		$('#nav_rot13').click(function(){
+			animation_fade();
+			$('#content').load('rot13Content.html');});
+		//transposition button
+		$('#nav_transposition').click(function(){
+			animation_fade();
+			$('#content').load('transpositionContent.html');});
+		//keycipher button
+		$('#nav_keycipher').click(function(){
+			animation_fade();
+			$('#content').load('keycipherContent.html');});
+		//design button
+		$('#nav_design').click(function(){
+			animation_fade();
+			$('#content').load('designContent.html');});
+	});
+</script>
+<div id="titleBar"></div>
+<div id="menu">
+	<ul>
+		<li><a href="#home" id="nav_home">home</a></li>
+		<li><a href="#rot13" id="nav_rot13">rot13 cipher</a></li>
+		<li><a href="#transposition" id="nav_transposition">transposition cipher</a></li>
+		<li><a href="#keycipher" id="nav_keycipher">key cipher</a></li>
+		<li><a href="#design" id="nav_design">design</a></li>
+	</ul>
+</div>
+<div id="content"></div>
+<div id="ads">
+	<div id="ad1">
+	<h1>AD#1</h1>
+	</div>
+	<div id="ad2">
+	<h1>AD#2</h1>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+<div id="innerContent">
+	<img src="img/rot13.png" alt="ROT13 cipher" id="rot13Cipher">
+	<h1>ROT13 Cipher</h1>
+	<br>
+	<p> ROT13 "rotate by 13 places" is a simple letter substitution cipher that replaces a letter with the 13th letter after it, 
+		in the alphabet. ROT13 is its own inverse; that is, to undo ROT13, the same algorithm is applied, so the same action 
+		can be used for encoding and decoding. The algorithm provides virtually no cryptographic security, and is often cited 
+		as a canonical example of weak encryption.
+		<br />Can only process letters of the alphabet separated by spaces.
+	</p>
+
+	<div id="input_area">
+		<textarea rows="6" cols="70" autofocus id="deciphered_rot13"></textarea >
+	</div >
+	<div id="button_area">
+		<button type="button" onclick="rot13_encode()" id="rot13_encode">Encode</button>
+		<button type="button" onclick="rot13_decode()" id="rot13_decode">Decode</button>
+	</div>
+	<div id="output_area">
+		<textarea rows="6" cols="70" autofocus id="ciphered_rot13"></textarea >
+	</div >
+</div>
+</body>
+</html>

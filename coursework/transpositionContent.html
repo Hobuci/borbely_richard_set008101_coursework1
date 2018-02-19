@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+<div id="innerContent">
+	<h1>Transposition Cipher</h1>
+	<br>
+	<p> This is a simple transposition cipher that I have developed, it outputs each word backwards but in the same order. Same as ROT13 it is it's own
+		inverse; to decipher the message the same algorithm is applied, providing little to no security.
+		<br />Can only process letters of the alphabet separated by spaces.
+	</p>
+
+	<div id="input_area">
+		<textarea rows="6" cols="70" autofocus id="deciphered_transposition"></textarea>
+	</div>
+	<div id="button_area">
+		<button type="button" onclick="transposition_encode()" id="transposition_encode">Encode</button>
+		<button type="button" onclick="transposition_decode()" id="transposition_decode">Decode</button>
+	</div>
+	<div id="output_area">
+		<textarea rows="6" cols="70" autofocus id="ciphered_transposition"></textarea>
+	</div>
+</div>
+</body>
+</html>
