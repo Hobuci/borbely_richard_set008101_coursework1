@@ -1,11 +1,16 @@
+//declare advertisement names and links
+var ad_names = [ "ad1", "ad2", "ad3", "ad4", "ad5", "ad6" ];
+var ad_links = [ "http://google.co.uk", "http://reddit.com", "http://facebook.co.uk", "http://youtube.com", "http://store.steampowered.com/", "http://twitter.com" ];
+
+//declare alphabet
+const alphabet = [ "a","b","c","d","e","f","g","h","i","j","k","l","m",
+				"n","o","p","q","r","s","t","u","v","w","x","y","z" ];
+
 /*
  * ROT13 cipher function; takes an input text and shifts each character by 13 places.
  * Can only process letters of the alphabet separated by spaces.
- */
+ */				
 function rot13_encode() {
-	//declare alphabet
-	const alphabet = [ "a","b","c","d","e","f","g","h","i","j","k","l","m",
-					"n","o","p","q","r","s","t","u","v","w","x","y","z" ];
 	//clear output area
 	document.getElementById("ciphered_rot13").value = null;
 	
@@ -45,9 +50,6 @@ function rot13_encode() {
 	}
 }
 function rot13_decode() {
-	//declare alphabet
-	const alphabet = [ "a","b","c","d","e","f","g","h","i","j","k","l","m",
-					"n","o","p","q","r","s","t","u","v","w","x","y","z" ];
 	//clear output area
 	document.getElementById("deciphered_rot13").value = null;
 	
@@ -167,9 +169,6 @@ function transposition_decode(){
  * Can only process letters of the alphabet separated by spaces.
  */
 function keycipher_encode(){
-	//declare alphabet
-	const alphabet = [ "a","b","c","d","e","f","g","h","i","j","k","l","m",
-					"n","o","p","q","r","s","t","u","v","w","x","y","z" ];
 	//clear output area
 	document.getElementById("ciphered_keycipher").value = null;
 	
@@ -209,9 +208,6 @@ function keycipher_encode(){
 	}
 }
 function keycipher_decode(){
-
-	const alphabet = [ "a","b","c","d","e","f","g","h","i","j","k","l","m",
-					"n","o","p","q","r","s","t","u","v","w","x","y","z" ];
 
 	document.getElementById("deciphered_keycipher").value = null;
 	
@@ -264,18 +260,42 @@ function generate_newkey(key, keyLength, inputLength){
 	}
 	return key;
 }
+
 function clearKeyArea() {
 	document.getElementById("key_keycipher").value = "";
 }
-
-
 function animation_fade() {
-	//this doesn't work, its like it never applies, unless in debug mode
-	document.getElementById("content").style.opacity = 0;
+	//changes div opacity overtime (defined in CSS at 'div#content')
 	for(var i = 1; i <= 90; i++)
 	{
 		document.getElementById("content").style.opacity = i/100;
 	}
+}
+function cycle_ads() {
+	//call ad change every 8s 
+	setInterval(ad_change, 8000);
+}
+function ad_change() {
+	//change to next ad
+	var randomAD = getRnd(0, ad_names.length - 1);
+	//change ad1 image
+	document.getElementById("ad1Img").src = "img/ads/" + ad_names[randomAD] + ".png";
+	//change ad1 link
+	document.getElementById("ad1_link").href= ad_links[randomAD];
+	
+	var randomAD2 = getRnd(0, ad_names.length - 1);
+	//to make sure that the same AD doesn't repeat on a page, generate random numbers until they differ
+	while(randomAD == randomAD2){
+		randomAD2 = getRnd(0, ad_names.length - 1);
+	}
+	//change ad2 image
+	document.getElementById("ad2Img").src = "img/ads/" + ad_names[randomAD2] + ".png";
+	//change ad2 link
+	document.getElementById("ad2_link").href= ad_links[randomAD];
+}
+function getRnd(min, max) {
+	//returns random number including the min and max value
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
 
