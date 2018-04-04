@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  div(id= "newPost")
+    form(id= "newPostForm" method="POST" action="/posts/new/add" enctype="multipart/form-data")
+      textarea(id= "newTitle" form="newPostForm" name="title" rows="1" cols="30" onclick="clearArea('newTitle')") Enter Title
+      br
+      textarea(id= "newLocation" form="newPostForm" name="location" rows="1" cols="20" onclick="clearArea('newLocation')") Enter Location
+      br
+      input(id="newImg" type="file", form="newPostForm", name="img")
+      br
+      textarea(id= "newText" form="newPostForm" name="text" rows="30" cols="50" onclick="clearArea('newText')")  Describe trip here
+      br
+      button(id= "checkInputBtn" type="button" onclick="checkInput()") Submit
+      button(id= "submit" type="submit")

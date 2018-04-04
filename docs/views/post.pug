@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  div(id= "posts")
+    ul(class= "post")
+      - let from = (postCount-1) - (5 * (pageNumber-1)) //from the last item
+      - let to = from - 5; //display 4 more
+      - for (let i = from; i > to; i--){ //iterating backwards on the data
+          if(posts[i])
+            li(class= "post")
+              div(id= "postTitle")
+                h1(class= "post" )= posts[i].title
+                  a(href='/posts/edit/' + posts[i]._id)
+                    button(id= "editPost" type="button") 
+                  button(id= "deletePost" type="button" post-id=posts[i]._id) 
+              if(posts[i].img !== 'N/A')
+                div(id= "postImg")
+                  img(src="../../../../images/uploads/" + posts[i].img)
+              p(class= "post")= posts[i].text
+              p(class= "postSeparator") ~
+      - }
