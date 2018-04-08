@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  div(id= "newPost")
+    form(id= "newPostForm" method="POST" action="/posts/edit/" + post._id + "/submit" enctype="multipart/form-data")
+      textarea(id= "newTitle" form="newPostForm" name="title" rows="1" cols="30")= post.title
+      br
+      textarea(id= "newLocation" form="newPostForm" name="location" rows="1" cols="20")= post.location
+      br
+      if(post.img != "N/A")
+        img(id= "edit", src="../../../../images/uploads/" + post.img)
+        textarea(id= "existingImg" form="newPostForm" name="imgEx" style="display:none;")= post.img
+      input(id="newImg" type="file", form="newPostForm", name="img")
+      br
+      textarea(id= "newText" form="newPostForm" name="text" rows="30" cols="50")= post.text
+      br
+      button(id= "checkInputBtn" type="button" onclick="checkInput()") Submit
+      button(id= "submit" type="submit")
