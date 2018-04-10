@@ -19,11 +19,10 @@ block content
                   a(href='/posts/edit/' + posts[i]._id)
                     button(id= "editPost" type="button") 
                   button(id= "deletePost" type="button" post-id=posts[i]._id) 
-              if(posts[i].img)
+              if(posts[i].img !== 'N/A')
                 div(id= "postImg")
-                  p Picture box HERE
-              else
-                p No picture HERE
+                  img(src="../../../../images/uploads/" + posts[i].img)
+              p(class= "postLocation")= posts[i].location
               p(class= "post")= posts[i].text
               p(class= "postSeparator") ~
       - }
